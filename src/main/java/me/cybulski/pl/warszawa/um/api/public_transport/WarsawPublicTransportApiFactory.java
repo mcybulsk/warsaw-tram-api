@@ -20,8 +20,7 @@ public final class WarsawPublicTransportApiFactory {
 //    FIXME Add a possibility to change UserAgent
     public static WarsawPublicTransportApi createInstance(String apiKey) {
         WarsawPublicTransportApiConfiguration configuration = new WarsawPublicTransportApiConfiguration();
-        return new WarsawPublicTransportApiImpl(configuration,
-                                                createIntegrationService(configuration,
+        return new WarsawPublicTransportApiImpl(createIntegrationService(configuration,
                                                                          apiKey,
                                                                          configuration.getLibraryUserAgent()),
                                                 createObjectMappingService(configuration));
