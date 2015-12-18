@@ -1,0 +1,29 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.12'
+    compile 'com.google.guava:guava:19.0'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.6.4'
+    compile 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.6.1'
+    compile 'commons-io:commons-io:2.4'
+    compile 'org.apache.commons:commons-lang3:3.4'
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.easymock:easymock:3.4'
+    testCompile 'org.assertj:assertj-core:3.2.0'
+}
+
+group = 'me.cybulski'
+version = '0.1.0-dev'
+
+jar {
+    manifest {
+        attributes("Implementation-Title": "warsaw-tram-api",
+                   "Implementation-Version": version)
+    }
+}
