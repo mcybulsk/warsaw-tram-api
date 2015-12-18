@@ -10,14 +10,11 @@ import me.cybulski.pl.warszawa.um.api.public_transport.model.WarsawPublicTranspo
 class WarsawPublicTransportApiImpl implements WarsawPublicTransportApi {
 
     // Dependencies
-    private WarsawPublicTransportApiConfiguration apiConfiguration;
     private WarsawPublicTransportApiIntegrationService integrationService;
     private WarsawPublicTransportObjectMappingService objectMappingService;
 
-    WarsawPublicTransportApiImpl(WarsawPublicTransportApiConfiguration apiConfiguration,
-                                 WarsawPublicTransportApiIntegrationService integrationService,
+    WarsawPublicTransportApiImpl(WarsawPublicTransportApiIntegrationService integrationService,
                                  WarsawPublicTransportObjectMappingService objectMappingService) {
-        this.apiConfiguration = apiConfiguration;
         this.integrationService = integrationService;
         this.objectMappingService = objectMappingService;
     }
