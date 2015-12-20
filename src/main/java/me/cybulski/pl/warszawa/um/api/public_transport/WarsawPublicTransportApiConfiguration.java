@@ -14,7 +14,7 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
 /**
- * Warsaw tram API configuration class.
+ * Warsaw Public Transport API configuration class.
  *
  * @author Michał Cybulski
  */
