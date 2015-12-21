@@ -17,9 +17,9 @@ public final class WarsawPublicTransportApiFactory {
      * @param apiKey Warsaw API's API key needed for access to the data
      * @return an instance of the {@link WarsawPublicTransportApi} interface
      */
-//    FIXME Add a possibility to change UserAgent
     public static WarsawPublicTransportApi createInstance(String apiKey) {
-        WarsawPublicTransportApiConfiguration configuration = new WarsawPublicTransportApiConfiguration();
+        WarsawPublicTransportApiConfiguration configuration = createConfiguration();
+
         return new WarsawPublicTransportApiImpl(createIntegrationService(configuration,
                                                                          apiKey,
                                                                          configuration.getLibraryUserAgent()),
@@ -39,5 +39,9 @@ public final class WarsawPublicTransportApiFactory {
     private static WarsawPublicTransportObjectMappingService createObjectMappingService(
             WarsawPublicTransportApiConfiguration configuration) {
         return new WarsawPublicTransportObjectMappingServiceImpl(configuration.getObjectMapper());
+    }
+
+    private static WarsawPublicTransportApiConfiguration createConfiguration() {
+        return new WarsawPublicTransportApiConfiguration();
     }
 }

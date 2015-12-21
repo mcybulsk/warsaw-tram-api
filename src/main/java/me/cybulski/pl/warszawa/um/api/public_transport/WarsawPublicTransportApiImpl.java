@@ -20,6 +20,13 @@ class WarsawPublicTransportApiImpl implements WarsawPublicTransportApi {
     }
 
     @Override
+    public WarsawPublicTransportApi setUserAgent(String userAgent) {
+        integrationService.setUserAgent(userAgent);
+
+        return this;
+    }
+
+    @Override
     public WarsawPublicTransportState getPublicTransportState() {
         String rawData = integrationService.getWarsawPublicTransportStateRawData();
 

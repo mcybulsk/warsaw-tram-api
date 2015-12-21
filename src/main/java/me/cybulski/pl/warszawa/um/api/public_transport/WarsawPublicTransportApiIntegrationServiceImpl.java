@@ -26,7 +26,7 @@ class WarsawPublicTransportApiIntegrationServiceImpl implements WarsawPublicTran
     private final String warsawTramApiWsEndpointUrl;
 
     // Client information
-    private final String userAgent;
+    private String userAgent;
     private final String apiKey;
 
     WarsawPublicTransportApiIntegrationServiceImpl(WarsawPublicTransportApiConfiguration configuration,
@@ -34,6 +34,11 @@ class WarsawPublicTransportApiIntegrationServiceImpl implements WarsawPublicTran
                                                    String userAgent) {
         this.warsawTramApiWsEndpointUrl = configuration.getWarsawTramApiWsEndpointUrl();
         this.apiKey = apiKey;
+        this.userAgent = userAgent;
+    }
+
+    @Override
+    public void setUserAgent(String userAgent) {
         this.userAgent = userAgent;
     }
 
