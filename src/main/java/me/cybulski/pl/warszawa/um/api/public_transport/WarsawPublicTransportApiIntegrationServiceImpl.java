@@ -58,7 +58,10 @@ class WarsawPublicTransportApiIntegrationServiceImpl implements WarsawPublicTran
     private String getHttpData(String endpointUrlString) {
         HttpURLConnection httpURLConnection = null;
         try {
-            URL endpointUrl = new URL(endpointUrlString + "&apikey=" + apiKey);
+            String requestUrlString = endpointUrlString + "&apikey=" + apiKey;
+            URL endpointUrl = new URL(requestUrlString);
+
+            LOGGER.trace("Sending request to: " + requestUrlString + " with UserAgent: " + userAgent);
             httpURLConnection = (HttpURLConnection) endpointUrl.openConnection();
             httpURLConnection.setRequestMethod(METHOD_GET);
             httpURLConnection.setRequestProperty(HEADER_USER_AGENT, userAgent);

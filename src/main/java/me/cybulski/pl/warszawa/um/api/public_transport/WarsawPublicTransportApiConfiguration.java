@@ -1,7 +1,6 @@
 package me.cybulski.pl.warszawa.um.api.public_transport;
 
 import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -44,7 +43,7 @@ class WarsawPublicTransportApiConfiguration {
                 new JsonDeserializer<ZonedDateTime>() {
                     @Override
                     public ZonedDateTime deserialize(JsonParser p, DeserializationContext ctxt)
-                            throws IOException, JsonProcessingException {
+                            throws IOException {
                         String dateString = p.getValueAsString();
                         LocalDateTime localDateTime = LocalDateTime.parse(dateString);
                         return localDateTime.atZone(ZoneId.of("Europe/Warsaw"));
